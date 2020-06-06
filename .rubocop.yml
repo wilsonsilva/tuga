@@ -4,15 +4,17 @@ AllCops:
   DisplayCopNames: true
   NewCops: enable
 
+# ----------------------- Layout ----------------------
+
+Layout:
+  Max: 120
+
 # ---------------------- Metrics ----------------------
 
 Metrics/BlockLength:
   Exclude:
     - spec/**/*_spec.rb
     - tuga.gemspec
-
-Metrics/LineLength:
-  Max: 120
 
 # ----------------------- RSpec -----------------------
 
