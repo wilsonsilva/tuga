@@ -1,4 +1,5 @@
 require 'bundler/setup'
+require 'pry'
 require 'tuga'
 
 RSpec.configure do |config|
