@@ -14,7 +14,9 @@ else
   ARGV.each do |file_path|
     next unless file_path
 
-    raise 'O requisito mínimo para executar é Ruby 2.4' if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.3')
+    unless Gem::Requirement.new('~> 2.4.0').satisfied_by?(Gem::Version.new(RUBY_VERSION))
+      raise 'O requisito mínimo para executar é Ruby 2.4'
+    end
 
     transpiler = Tuga::Transpiler.new
     tuga_code  = File.read(File.expand_path(file_path, File.dirname(__FILE__)), encoding: 'utf-8')
