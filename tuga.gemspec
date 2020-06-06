@@ -26,6 +26,10 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  # These versions of the parsers and transpilers are compatible with Ruby 2.4. Recent versions are not.
+  spec.add_dependency 'ruby2ruby', '= 2.4.4'
+  spec.add_dependency 'ruby_parser', '= 3.12.0'
+
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'bundler-audit', '~> 0.6'
   spec.add_development_dependency 'guard', '~> 2.16'
