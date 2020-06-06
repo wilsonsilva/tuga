@@ -21,6 +21,11 @@ Metrics/BlockLength:
 RSpec/ExampleLength:
   Enabled: false
 
+# ------------------- Security/Eval -------------------
+Security/Eval:
+  Exclude:
+    - bin/tuga
+
 # ----------------------- Style -----------------------
 
 Style/FrozenStringLiteralComment:

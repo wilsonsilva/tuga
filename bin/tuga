@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'tuga/transpiler'
+require 'rubygems'
+
+if ARGV.nil?
+  puts <<~ERRO
+    Código fonte não especificado. A sintaxe correta é:
+
+    tuga ficheiro_codigo_fonte.pt
+  ERRO
+else
+  ARGV.each do |file_path|
+    next unless file_path
+
+    raise 'O requisito mínimo para executar é Ruby 2.4' if Gem::Version.new(RUBY_VERSION) < Gem::Version.new('2.3')
+
+    transpiler = Tuga::Transpiler.new
+    tuga_code  = File.read(File.expand_path(file_path, File.dirname(__FILE__)), encoding: 'utf-8')
+    ruby_code  = transpiler.to_ruby tuga_code
+
+    eval ruby_code
+  end
+end
