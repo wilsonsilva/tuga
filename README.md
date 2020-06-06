@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/tuga.svg)](https://badge.fury.io/rb/tuga)
 [![Build Status](https://travis-ci.org/wilsonsilva/tuga.svg?branch=master)](https://travis-ci.org/wilsonsilva/tuga)
+[![Maintainability](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/maintainability)](https://codeclimate.com/github/wilsonsilva/tuga/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/test_coverage)](https://codeclimate.com/github/wilsonsilva/tuga/test_coverage)
 [![Security](https://hakiri.io/github/wilsonsilva/tuga/master.svg)](https://hakiri.io/github/wilsonsilva/tuga/master)
 [![Inline docs](http://inch-ci.org/github/wilsonsilva/tuga.svg?branch=master)](http://inch-ci.org/github/wilsonsilva/tuga)
 
