@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Wilson Silva']
   spec.email         = ['me@wilsonsilva.net']
 
-  spec.summary       = 'Tuga é uma linguagem de programação em Português'
-  spec.description   = 'Linguagem de programação para ensinar conceitos básicos a programadores iniciantes em Português'
+  spec.summary       = 'A Portuguese script programming language.'
+  spec.description   = 'A Portuguese script programming language meant for educational purposes.'
   spec.homepage      = 'https://github.com/willsonsilva/tuga'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('~> 2.4.0')
