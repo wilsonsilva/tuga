@@ -31,8 +31,29 @@ Or install it yourself as:
 
 ## Usage
 
+### In the command line
+Run the `tuga` command followed by a filename.
+
 ```
 tuga soure_code.pt
+```
+
+### In an application
+Require the `Tuga` transpiler and give it Tuga source code.
+
+```ruby
+require 'tuga/transpiler'
+
+source_code = <<~BACALHAU
+  lista_de_frutas = ['maçã', 'manga', 'goiaba', 'uva']
+
+  por_cada fruta na lista_de_frutas fazer
+    escrever fruta.com_letra_maiuscula
+  fim
+BACALHAU
+
+transpiler = Tuga::Transpiler.new
+transpiler.to_ruby(source_code)
 ```
 
 ## Development
