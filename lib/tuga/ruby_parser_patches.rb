@@ -23,24 +23,31 @@ module RubyParserStuff
       ['alias',                %i[kALIAS kALIAS],               :expr_fname],
       ['garantir',             %i[kENSURE kENSURE],             :expr_beg],
       ['senão',                %i[kELSE kELSE],                 :expr_beg],
+      ['senao',                %i[kELSE kELSE],                 :expr_beg],
       ['então',                %i[kTHEN kTHEN],                 :expr_beg],
+      ['entao',                %i[kTHEN kTHEN],                 :expr_beg],
       ['fazer',                %i[kDO kDO],                     :expr_beg],
-      ['início',               %i[kBEGIN kBEGIN],               :expr_beg]
+      ['início',               %i[kBEGIN kBEGIN],               :expr_beg],
+      ['inicio',               %i[kBEGIN kBEGIN],               :expr_beg]
     ]
 
     expression_keywords = [
       ['e',                    %i[kAND kAND],                   :expr_beg],
       ['várias_opções',        %i[kCASE kCASE],                 :expr_beg],
+      ['varias_opcoes',        %i[kCASE kCASE],                 :expr_beg],
       ['senão_se',             %i[kELSIF kELSIF],               :expr_beg],
+      ['senao_se',             %i[kELSIF kELSIF],               :expr_beg],
       ['por_cada',             %i[kFOR kFOR],                   :expr_beg],
       ['se',                   %i[kIF kIF_MOD],                 :expr_beg],
       ['na',                   %i[kIN kIN],                     :expr_beg],
       ['em',                   %i[kIN kIN],                     :expr_beg],
       ['módulo',               %i[kMODULE kMODULE],             :expr_beg],
+      ['modulo',               %i[kMODULE kMODULE],             :expr_beg],
       ['grupo',                %i[kMODULE kMODULE],             :expr_beg],
       ['ou',                   %i[kOR kOR],                     :expr_beg],
       ['excepto_se',           %i[kUNLESS kUNLESS_MOD],         :expr_beg],
       ['até_que',              %i[kUNTIL kUNTIL_MOD],           :expr_beg],
+      ['ate_que',              %i[kUNTIL kUNTIL_MOD],           :expr_beg],
       ['quando',               %i[kWHEN kWHEN],                 :expr_beg],
       ['enquanto',             %i[kWHILE kWHILE_MOD],           :expr_beg]
     ]
@@ -55,7 +62,8 @@ module RubyParserStuff
     ]
 
     argument_keywords = [
-      ['não', %i[kNOT kNOT], :expr_beg]
+      ['não', %i[kNOT kNOT], :expr_beg],
+      ['nao', %i[kNOT kNOT], :expr_beg]
     ]
 
     original_verbosity = $VERBOSE

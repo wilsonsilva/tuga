@@ -41,6 +41,11 @@ RSpec.describe Tuga::Transpiler do
       expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '(not true)')
     end
 
+    it 'transpiles the keyword nao to not' do
+      ruby_code = transpiler.to_ruby('nao verdadeiro')
+      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '(not true)')
+    end
+
     it 'transpiles the keywords se / então / senão_se / senão / fim' do
       ruby_code = transpiler.to_ruby('
         se 1 então
@@ -48,6 +53,19 @@ RSpec.describe Tuga::Transpiler do
         senão_se 3
           4
         senão
+          5
+        fim')
+
+      expect(ruby_code).to be_like(Tuga::Transpiler::INITIAL_CODE + '1 ? (2) : (3 ? (4) : (5))')
+    end
+
+    it 'transpiles the keywords se / entao / senao_se / senao / fim' do
+      ruby_code = transpiler.to_ruby('
+        se 1 entao
+          2
+        senao_se 3
+          4
+        senao
           5
         fim')
 
@@ -75,9 +93,52 @@ RSpec.describe Tuga::Transpiler do
         end')
     end
 
+    it 'transpiles the keywords varias_opcoes / quando / entao / senao / fim' do
+      ruby_code = transpiler.to_ruby("
+        varias_opcoes 1
+        quando 1 entao 1
+        quando 2
+          2
+        senao
+          3
+        fim")
+
+      expect(ruby_code).to be_like(Tuga::Transpiler::INITIAL_CODE +
+       'case 1
+        when 1 then
+          1
+        when 2 then
+          2
+        else
+          3
+        end')
+    end
+
     it 'transpiles the keywords início / resgatar / provocar / garantir / fim' do
       ruby_code = transpiler.to_ruby('
         início
+          1 / 0
+        resgatar => erro
+          tentar_novamente
+          provocar erro
+        garantir
+          escrever "final"
+        fim')
+
+      expect(ruby_code).to be_like(Tuga::Transpiler::INITIAL_CODE +
+        'begin
+          (1 / 0)
+        rescue => erro
+          retry
+          provocar(erro)
+        ensure
+          escrever("final")
+        end')
+    end
+
+    it 'transpiles the keywords inicio / resgatar / provocar / garantir / fim' do
+      ruby_code = transpiler.to_ruby('
+        inicio
           1 / 0
         resgatar => erro
           tentar_novamente
