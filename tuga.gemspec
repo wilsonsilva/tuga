@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rubocop', '~> 0.85'
   spec.add_development_dependency 'rubocop-rspec', '~> 1.39'
-  spec.add_development_dependency 'simplecov', '~> 0.18'
+  spec.add_development_dependency 'simplecov', '~> 0.17.1'
   spec.add_development_dependency 'simplecov-console', '~> 0.7'
   spec.add_development_dependency 'yard', '~> 0.9'
   spec.add_development_dependency 'yard-junk', '~> 0.0.7'
