@@ -157,5 +157,12 @@ RSpec.describe Tuga::Transpiler do
           escrever("final")
         end')
     end
+
+    context 'when require_core_text is set to false' do
+      it 'transpiles the code without requiring the Portuguese core extensions' do
+        ruby_code = transpiler.to_ruby('escrever "ola"', require_core_ext: false)
+        expect(ruby_code).to be_like(Tuga::Transpiler::ENCODING + 'escrever("ola")')
+      end
+    end
   end
 end
