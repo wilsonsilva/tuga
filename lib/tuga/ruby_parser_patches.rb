@@ -3,94 +3,65 @@
 module RubyParserStuff
   # Language patches to Ruby Parser
   class Keyword
-    keywords = [
-      ['fim',                  %i[kEND kEND],                   :expr_end],
-      ['definir',              %i[kDEF kDEF],                   :expr_fname],
-      ['resgatar',             %i[kRESCUE kRESCUE_MOD],         :expr_mid],
-      ['produzir',             %i[kYIELD kYIELD],               :expr_arg],
-      ['sujeito',              %i[kSELF kSELF],                 :expr_end],
-      ['falso',                %i[kFALSE kFALSE],               :expr_end],
-      ['tentar_novamente',     %i[kRETRY kRETRY],               :expr_end],
-      ['retornar',             %i[kRETURN kRETURN],             :expr_mid],
-      ['verdadeiro',           %i[kTRUE kTRUE],                 :expr_end],
-      ['definido?',            %i[kDEFINED kDEFINED],           :expr_arg],
-      ['indefinir',            %i[kUNDEF kUNDEF],               :expr_fname],
-      ['quebrar',              %i[kBREAK kBREAK],               :expr_mid],
-      ['nulo',                 %i[kNIL kNIL],                   :expr_end],
-      ['seguinte',             %i[kNEXT kNEXT],                 :expr_mid],
-      ['refazer',              %i[kREDO kREDO],                 :expr_end],
-      ['classe',               %i[kCLASS kCLASS],               :expr_class],
-      ['alias',                %i[kALIAS kALIAS],               :expr_fname],
-      ['garantir',             %i[kENSURE kENSURE],             :expr_beg],
-      ['senão',                %i[kELSE kELSE],                 :expr_beg],
-      ['senao',                %i[kELSE kELSE],                 :expr_beg],
-      ['então',                %i[kTHEN kTHEN],                 :expr_beg],
-      ['entao',                %i[kTHEN kTHEN],                 :expr_beg],
-      ['fazer',                %i[kDO kDO],                     :expr_beg],
-      ['início',               %i[kBEGIN kBEGIN],               :expr_beg],
-      ['inicio',               %i[kBEGIN kBEGIN],               :expr_beg]
-    ]
+    expr_woot = EXPR_FNAME|EXPR_FITEM
 
-    expression_keywords = [
-      ['e',                    %i[kAND kAND],                   :expr_beg],
-      ['várias_opções',        %i[kCASE kCASE],                 :expr_beg],
-      ['varias_opcoes',        %i[kCASE kCASE],                 :expr_beg],
-      ['senão_se',             %i[kELSIF kELSIF],               :expr_beg],
-      ['senao_se',             %i[kELSIF kELSIF],               :expr_beg],
-      ['por_cada',             %i[kFOR kFOR],                   :expr_beg],
-      ['se',                   %i[kIF kIF_MOD],                 :expr_beg],
-      ['na',                   %i[kIN kIN],                     :expr_beg],
-      ['em',                   %i[kIN kIN],                     :expr_beg],
-      ['módulo',               %i[kMODULE kMODULE],             :expr_beg],
-      ['modulo',               %i[kMODULE kMODULE],             :expr_beg],
-      ['grupo',                %i[kMODULE kMODULE],             :expr_beg],
-      ['ou',                   %i[kOR kOR],                     :expr_beg],
-      ['excepto_se',           %i[kUNLESS kUNLESS_MOD],         :expr_beg],
-      ['até_que',              %i[kUNTIL kUNTIL_MOD],           :expr_beg],
-      ['ate_que',              %i[kUNTIL kUNTIL_MOD],           :expr_beg],
-      ['quando',               %i[kWHEN kWHEN],                 :expr_beg],
-      ['enquanto',             %i[kWHILE kWHILE_MOD],           :expr_beg]
-    ]
+    wordlist = [
+      ["alias",            [:kALIAS,    :kALIAS      ], expr_woot  ],
+      ["e",                [:kAND,      :kAND        ], EXPR_BEG   ],
+      ["inicio",           [:kBEGIN,    :kBEGIN      ], EXPR_BEG   ],
+      ["início",           [:kBEGIN,    :kBEGIN      ], EXPR_BEG   ],
+      ["quebrar",          [:kBREAK,    :kBREAK      ], EXPR_MID   ],
+      ["várias_opções",    [:kCASE,     :kCASE       ], EXPR_BEG   ],
+      ["varias_opcoes",    [:kCASE,    :kCASE        ], EXPR_BEG   ],
+      ["classe",           [:kCLASS,    :kCLASS      ], EXPR_CLASS ],
+      ["def",              [:kDEF,      :kDEF        ], EXPR_FNAME ],
+      ["definir",          [:kDEF,      :kDEF        ], EXPR_FNAME ],
+      ["definido?",        [:kDEFINED,  :kDEFINED    ], EXPR_ARG   ],
+      ["fazer",            [:kDO,       :kDO         ], EXPR_BEG   ],
+      ["senão",            [:kELSE,     :kELSE       ], EXPR_BEG   ],
+      ["senao",            [:kELSE,     :kELSE       ], EXPR_BEG   ],
+      ["senão_se",         [:kELSIF,    :kELSIF      ], EXPR_BEG   ],
+      ["senao_se",         [:kELSIF,    :kELSIF      ], EXPR_BEG   ],
+      ["fim",              [:kEND,      :kEND        ], EXPR_END   ],
+      ["garantir",         [:kENSURE,   :kENSURE     ], EXPR_BEG   ],
+      ["falso",            [:kFALSE,    :kFALSE      ], EXPR_END   ],
+      ["por_cada",         [:kFOR,      :kFOR        ], EXPR_BEG   ],
+      ["se",               [:kIF,       :kIF_MOD     ], EXPR_BEG   ],
+      ["em",               [:kIN,       :kIN         ], EXPR_BEG   ],
+      ["modulo",           [:kMODULE,   :kMODULE     ], EXPR_BEG   ],
+      ["grupo",            [:kMODULE,   :kMODULE     ], EXPR_BEG   ],
+      ["seguinte",         [:kNEXT,     :kNEXT       ], EXPR_MID   ],
+      ["nulo",             [:kNIL,      :kNIL        ], EXPR_END   ],
+      ["não",              [:kNOT,      :kNOT        ], EXPR_ARG   ],
+      ["nao",              [:kNOT,      :kNOT        ], EXPR_ARG   ],
+      ["ou",               [:kOR,       :kOR         ], EXPR_BEG   ],
+      ["refazer",          [:kREDO,     :kREDO       ], EXPR_END   ],
+      ["resgatar",         [:kRESCUE,   :kRESCUE_MOD ], EXPR_MID   ],
+      ["tentar_novamente", [:kRETRY,    :kRETRY      ], EXPR_END   ],
+      ["retornar",         [:kRETURN,   :kRETURN     ], EXPR_MID   ],
+      ["sujeito",          [:kSELF,     :kSELF       ], EXPR_END   ],
+      ["super",            [:kSUPER,    :kSUPER      ], EXPR_ARG   ],
+      ["então",            [:kTHEN,     :kTHEN       ], EXPR_BEG   ],
+      ["entao",            [:kTHEN,     :kTHEN       ], EXPR_BEG   ],
+      ["verdadeiro",       [:kTRUE,     :kTRUE       ], EXPR_END   ],
+      ["indefinir",        [:kUNDEF,    :kUNDEF      ], expr_woot  ],
+      ["excepto_se",       [:kUNLESS,   :kUNLESS_MOD ], EXPR_BEG   ],
+      ["até_que",          [:kUNTIL,    :kUNTIL_MOD  ], EXPR_BEG   ],
+      ["ate_que",          [:kUNTIL,    :kUNTIL_MOD  ], EXPR_BEG   ],
+      ["quando",           [:kWHEN,     :kWHEN       ], EXPR_BEG   ],
+      ["enquanto",         [:kWHILE,    :kWHILE_MOD  ], EXPR_BEG   ],
+      ["produzir",         [:kYIELD,    :kYIELD      ], EXPR_ARG   ],
+      ["BEGIN",            [:klBEGIN,   :klBEGIN     ], EXPR_END   ],
+      ["END",              [:klEND,     :klEND       ], EXPR_END   ],
+      ["__FILE__",         [:k__FILE__, :k__FILE__   ], EXPR_END   ],
+      ["__LINE__",         [:k__LINE__, :k__LINE__   ], EXPR_END   ],
+      ["__ENCODING__",     [:k__ENCODING__, :k__ENCODING__], EXPR_END],
+    ].map { |args|
+      KWtable.new(*args)
+    }
 
-    internal_keywords = [
-      ['END',                  %i[klEND klEND],                 :expr_end],
-      ['BEGIN',                %i[klBEGIN klBEGIN],             :expr_end],
-      ['super',                %i[kSUPER kSUPER],               :expr_arg],
-      ['__FILE__',             %i[k__FILE__ k__FILE__],         :expr_end],
-      ['__LINE__',             %i[k__LINE__ k__LINE__],         :expr_end],
-      ['__ENCODING__',         %i[k__ENCODING__ k__ENCODING__], :expr_end]
-    ]
+    # :startdoc:
 
-    argument_keywords = [
-      ['não', %i[kNOT kNOT], :expr_beg],
-      ['nao', %i[kNOT kNOT], :expr_beg]
-    ]
-
-    original_verbosity = $VERBOSE
-    $VERBOSE = nil
-
-    all_keywords = [
-      keywords,
-      expression_keywords,
-      internal_keywords,
-      argument_keywords
-    ].flatten(1).map { |args| KWtable.new(*args) }
-
-    WORDLIST18 = Hash[*all_keywords.map { |o| [o.name, o] }.flatten]
-    WORDLIST19 = Hash[*all_keywords.map { |o| [o.name, o] }.flatten]
-
-    $VERBOSE = original_verbosity
-
-    WORDLIST18.delete '__ENCODING__'
-
-    expression_keywords.each do |k|
-      WORDLIST19[k[0]] = WORDLIST19[k[0]].dup
-      WORDLIST19[k[0]].state = :expr_value
-    end
-
-    argument_keywords.each do |k|
-      WORDLIST19[k[0]] = WORDLIST19[k[0]].dup
-      WORDLIST19[k[0]].state = :expr_arg
-    end
+    WORDLIST = Hash[*wordlist.map { |o| [o.name, o] }.flatten]
   end
 end

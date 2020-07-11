@@ -3,6 +3,8 @@ require: rubocop-rspec
 AllCops:
   DisplayCopNames: true
   NewCops: enable
+  Exclude:
+    - lib/tuga/ruby_parser_patches.rb
 
 # ----------------------- Layout ----------------------
 

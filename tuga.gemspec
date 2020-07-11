@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'A Portuguese script programming language meant for educational purposes.'
   spec.homepage      = 'https://github.com/willsonsilva/tuga'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('~> 2.4.0')
+  spec.required_ruby_version = Gem::Requirement.new('~> 2.6.0')
 
   spec.metadata['homepage_uri']    = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/willsonsilva/tuga'
@@ -26,9 +26,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  # These versions of the parsers and transpilers are compatible with Ruby 2.4. Recent versions are not.
+  # These versions of the parsers and transpilers are compatible with Ruby 2.6. Recent versions are not.
   spec.add_dependency 'ruby2ruby', '= 2.4.4'
-  spec.add_dependency 'ruby_parser', '= 3.12.0'
+  spec.add_dependency 'ruby_parser', '= 3.14.2'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'bundler-audit', '~> 0.6'
