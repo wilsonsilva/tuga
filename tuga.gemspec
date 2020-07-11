@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'A Portuguese script programming language.'
   spec.description   = 'A Portuguese script programming language meant for educational purposes.'
-  spec.homepage      = 'https://github.com/willsonsilva/tuga'
+  spec.homepage      = 'https://github.com/wilsonsilva/tuga'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('~> 2.6.0')
 
   spec.metadata['homepage_uri']    = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/willsonsilva/tuga'
+  spec.metadata['source_code_uri'] = 'https://github.com/wilsonsilva/tuga'
   spec.metadata['changelog_uri']   = 'https://github.com/wilsonsilva/tuga/blob/master/CHANGELOG.md'
 
   # Specify which files should be added to the gem when it is released.
