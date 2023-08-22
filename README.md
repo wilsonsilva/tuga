@@ -10,7 +10,7 @@ A Portuguese script programming language meant for educational purposes.
 
 ## Requirements
 
-The gem requires version 2.6 of the Ruby programming language.
+The gem requires version 3.2 of the Ruby programming language.
 
 ## Installation
 

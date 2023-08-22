@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'A Portuguese script programming language meant for educational purposes.'
   spec.homepage      = 'https://github.com/wilsonsilva/tuga'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('~> 2.6.0')
+  spec.required_ruby_version = Gem::Requirement.new('~> 3.2.0')
 
   spec.metadata['homepage_uri']    = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/wilsonsilva/tuga'
@@ -26,26 +26,26 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  # These versions of the parsers and transpilers are compatible with Ruby 2.6. Recent versions are not.
-  spec.add_dependency 'ruby2ruby', '= 2.4.4'
-  spec.add_dependency 'ruby_parser', '= 3.14.2'
+  # These versions of the parsers and transpilers are compatible with Ruby 3.2
+  spec.add_dependency 'ruby2ruby', '~> 2.5'
+  spec.add_dependency 'ruby_parser', '~> 3.20'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'bundler-audit', '~> 0.6'
-  spec.add_development_dependency 'guard', '~> 2.16'
+  spec.add_development_dependency 'bundler-audit', '~> 0.9'
+  spec.add_development_dependency 'guard', '~> 2.18'
   spec.add_development_dependency 'guard-bundler', '~> 3.0'
   spec.add_development_dependency 'guard-bundler-audit', '~> 0.1'
   spec.add_development_dependency 'guard-rspec', '~> 4.7'
-  spec.add_development_dependency 'guard-rubocop', '~> 1.3'
-  spec.add_development_dependency 'overcommit', '~> 0.53'
-  spec.add_development_dependency 'pry', '~> 0.13'
-  spec.add_development_dependency 'rake', '~> 12.3'
-  spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.85'
-  spec.add_development_dependency 'rubocop-rspec', '~> 1.39'
+  spec.add_development_dependency 'guard-rubocop', '~> 1.5'
+  spec.add_development_dependency 'overcommit', '~> 0.60'
+  spec.add_development_dependency 'pry', '~> 0.14'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.12'
+  spec.add_development_dependency 'rubocop', '~> 1.56.1'
+  spec.add_development_dependency 'rubocop-rspec', '~> 2.23'
   spec.add_development_dependency 'simplecov', '~> 0.17.1'
-  spec.add_development_dependency 'simplecov-console', '~> 0.7'
+  spec.add_development_dependency 'simplecov-console', '~> 0.9'
   spec.add_development_dependency 'yard', '~> 0.9'
-  spec.add_development_dependency 'yard-junk', '~> 0.0.7'
+  spec.add_development_dependency 'yard-junk', '~> 0.0.9'
   spec.add_development_dependency 'yardstick', '~> 0.9'
 end

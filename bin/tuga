@@ -14,8 +14,8 @@ else
   ARGV.each do |file_path|
     next unless file_path
 
-    unless Gem::Requirement.new('~> 2.6.0').satisfied_by?(Gem::Version.new(RUBY_VERSION))
-      raise 'O requisito mínimo para executar é Ruby 2.6'
+    unless Gem::Requirement.new('~> 3.2.0').satisfied_by?(Gem::Version.new(RUBY_VERSION))
+      raise 'O requisito mínimo para executar é Ruby 3.2'
     end
 
     transpiler = Tuga::Transpiler.new

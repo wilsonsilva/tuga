@@ -8,42 +8,42 @@ RSpec.describe Tuga::Transpiler do
   describe '#to_ruby' do
     it 'transpiles an empty Tuga program' do
       ruby_code = transpiler.to_ruby('')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '')
+      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE.to_s)
     end
 
     it 'transpiles integers' do
       ruby_code = transpiler.to_ruby('1')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '1')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}1")
     end
 
     it 'transpiles decimals' do
       ruby_code = transpiler.to_ruby('1.2')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '1.2')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}1.2")
     end
 
     it 'transpiles arrays of numbers' do
       ruby_code = transpiler.to_ruby('[1.2, 3]')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '[1.2, 3]')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}[1.2, 3]")
     end
 
     it 'transpiles the keyword verdadeiro to true' do
       ruby_code = transpiler.to_ruby('verdadeiro')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + 'true')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}true")
     end
 
     it 'transpiles the keyword falso to false' do
       ruby_code = transpiler.to_ruby('falso')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + 'false')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}false")
     end
 
     it 'transpiles the keyword não to not' do
       ruby_code = transpiler.to_ruby('não verdadeiro')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '(not true)')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}(not true)")
     end
 
     it 'transpiles the keyword nao to not' do
       ruby_code = transpiler.to_ruby('nao verdadeiro')
-      expect(ruby_code).to eq(Tuga::Transpiler::INITIAL_CODE + '(not true)')
+      expect(ruby_code).to eq("#{Tuga::Transpiler::INITIAL_CODE}(not true)")
     end
 
     it 'transpiles the keywords se / então / senão_se / senão / fim' do
@@ -56,7 +56,7 @@ RSpec.describe Tuga::Transpiler do
           5
         fim')
 
-      expect(ruby_code).to be_like(Tuga::Transpiler::INITIAL_CODE + '1 ? (2) : (3 ? (4) : (5))')
+      expect(ruby_code).to be_like("#{Tuga::Transpiler::INITIAL_CODE}1 ? (2) : (3 ? (4) : (5))")
     end
 
     it 'transpiles the keywords se / entao / senao_se / senao / fim' do
@@ -69,7 +69,7 @@ RSpec.describe Tuga::Transpiler do
           5
         fim')
 
-      expect(ruby_code).to be_like(Tuga::Transpiler::INITIAL_CODE + '1 ? (2) : (3 ? (4) : (5))')
+      expect(ruby_code).to be_like("#{Tuga::Transpiler::INITIAL_CODE}1 ? (2) : (3 ? (4) : (5))")
     end
 
     it 'transpiles the keywords várias_opções / quando / então / senão / fim' do
@@ -161,7 +161,7 @@ RSpec.describe Tuga::Transpiler do
     context 'when require_core_text is set to false' do
       it 'transpiles the code without requiring the Portuguese core extensions' do
         ruby_code = transpiler.to_ruby('escrever "ola"', require_core_ext: false)
-        expect(ruby_code).to be_like(Tuga::Transpiler::ENCODING + 'escrever("ola")')
+        expect(ruby_code).to be_like("#{Tuga::Transpiler::ENCODING}escrever(\"ola\")")
       end
     end
   end

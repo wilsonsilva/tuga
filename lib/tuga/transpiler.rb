@@ -14,7 +14,7 @@ module Tuga
     CORE_EXTENSIONS = "require \"tuga/core_ext\"\n"
 
     # Every transpilled program will be encoded
-    INITIAL_CODE = "#{ENCODING}#{CORE_EXTENSIONS}"
+    INITIAL_CODE = "#{ENCODING}#{CORE_EXTENSIONS}".freeze
 
     def initialize
       @ruby_2_ruby = Ruby2Ruby.new

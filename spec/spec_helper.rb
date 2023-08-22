@@ -8,7 +8,7 @@ SimpleCov.formatter = SimpleCov::Formatter::Console unless ENV['COVERAGE_FORMAT'
 unless ENV['COVERAGE'] == 'false'
   SimpleCov.start do
     root 'lib'
-    coverage_dir Dir.pwd + '/coverage'
+    coverage_dir "#{Dir.pwd}/coverage"
   end
 end
 
