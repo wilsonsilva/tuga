@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.5.1] - 2023-08-22
+### Changed
+- Renamed the `master` branch to `main`
+
 ## [0.5.0] - 2023-08-22
 ### Added
 - Added the keyword `na`, which is the equivalent of `in` in Ruby
@@ -36,6 +40,7 @@ by updating it from `~ 10.0` to `~ 12.3`.
 - Initial core functionality
 - Codebase maintenance tools
 
+[0.5.1]: https://github.com/wilsonsilva/tuga/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/wilsonsilva/tuga/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/wilsonsilva/tuga/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/wilsonsilva/tuga/compare/v0.2.0...v0.3.0
