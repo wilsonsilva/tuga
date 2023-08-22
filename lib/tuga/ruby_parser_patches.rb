@@ -28,6 +28,7 @@ module RubyParserStuff
       ["por_cada",         [:kFOR,      :kFOR        ], EXPR_BEG   ],
       ["se",               [:kIF,       :kIF_MOD     ], EXPR_BEG   ],
       ["em",               [:kIN,       :kIN         ], EXPR_BEG   ],
+      ["na",               [:kIN,       :kIN         ], EXPR_BEG   ],
       ["modulo",           [:kMODULE,   :kMODULE     ], EXPR_BEG   ],
       ["grupo",            [:kMODULE,   :kMODULE     ], EXPR_BEG   ],
       ["seguinte",         [:kNEXT,     :kNEXT       ], EXPR_MID   ],
