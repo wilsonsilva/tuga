@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/wilsonsilva/tuga.svg?branch=main)](https://travis-ci.org/wilsonsilva/tuga)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/maintainability)](https://codeclimate.com/github/wilsonsilva/tuga/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/test_coverage)](https://codeclimate.com/github/wilsonsilva/tuga/test_coverage)
-[![Security](https://hakiri.io/github/wilsonsilva/tuga/main.svg)](https://hakiri.io/github/wilsonsilva/tuga/main)
 [![Inline docs](http://inch-ci.org/github/wilsonsilva/tuga.svg?branch=main)](http://inch-ci.org/github/wilsonsilva/tuga)
 
 A Portuguese script programming language meant for educational purposes.
