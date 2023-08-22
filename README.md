@@ -1,11 +1,11 @@
 # Tuga
 
 [![Gem Version](https://badge.fury.io/rb/tuga.svg)](https://badge.fury.io/rb/tuga)
-[![Build Status](https://travis-ci.org/wilsonsilva/tuga.svg?branch=master)](https://travis-ci.org/wilsonsilva/tuga)
+[![Build Status](https://travis-ci.org/wilsonsilva/tuga.svg?branch=main)](https://travis-ci.org/wilsonsilva/tuga)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/maintainability)](https://codeclimate.com/github/wilsonsilva/tuga/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/7afec90a09db3956b7dc/test_coverage)](https://codeclimate.com/github/wilsonsilva/tuga/test_coverage)
-[![Security](https://hakiri.io/github/wilsonsilva/tuga/master.svg)](https://hakiri.io/github/wilsonsilva/tuga/master)
-[![Inline docs](http://inch-ci.org/github/wilsonsilva/tuga.svg?branch=master)](http://inch-ci.org/github/wilsonsilva/tuga)
+[![Security](https://hakiri.io/github/wilsonsilva/tuga/main.svg)](https://hakiri.io/github/wilsonsilva/tuga/main)
+[![Inline docs](http://inch-ci.org/github/wilsonsilva/tuga.svg?branch=main)](http://inch-ci.org/github/wilsonsilva/tuga)
 
 A Portuguese script programming language meant for educational purposes.
 
@@ -81,7 +81,7 @@ rake yardstick_measure     # Measure docs in lib/**/*.rb with yardstick
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/wilsonsilva/tuga. This project is intended to
 be a safe, welcoming space for collaboration, and contributors are expected to adhere to the
-[code of conduct](https://github.com/wilsonsilva/tuga/blob/master/CODE_OF_CONDUCT.md).
+[code of conduct](https://github.com/wilsonsilva/tuga/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -90,4 +90,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Tuga project's codebases, issue trackers, chat rooms and mailing lists is expected to
-ollow the [code of conduct](https://github.com/wilsonsilva/tuga/blob/master/CODE_OF_CONDUCT.md).
+ollow the [code of conduct](https://github.com/wilsonsilva/tuga/blob/main/CODE_OF_CONDUCT.md).
