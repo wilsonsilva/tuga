@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2023-08-22
+### Changed
+- Set the minimum Ruby version to `3.2`.
+
+### Updated
+- Updated all the development dependencies
+- Updated `ruby2ruby` and `ruby_parser` to the versions `2.5` and `3.20` respectively
+
 ## [0.5.1] - 2023-08-22
 ### Changed
 - Renamed the `master` branch to `main`
@@ -40,6 +48,7 @@ by updating it from `~ 10.0` to `~ 12.3`.
 - Initial core functionality
 - Codebase maintenance tools
 
+[0.6.0]: https://github.com/wilsonsilva/tuga/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/wilsonsilva/tuga/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/wilsonsilva/tuga/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/wilsonsilva/tuga/compare/v0.3.0...v0.4.0
