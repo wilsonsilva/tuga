@@ -63,6 +63,9 @@ module RubyParserStuff
 
     # :startdoc:
 
+    # Remove the constant before defining it again. Prevents warnings.
+    RubyParserStuff::Keyword.send(:remove_const, :WORDLIST) if defined?(RubyParserStuff::Keyword::WORDLIST)
+
     WORDLIST = Hash[*wordlist.map { |o| [o.name, o] }.flatten]
   end
 end
