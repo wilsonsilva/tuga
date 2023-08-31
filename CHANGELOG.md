@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.6.1] - 2023-08-31
+### Changed
+- Removes the constant `RubyParserStuff::Keyword::WORDLIST` before re-setting it. Prevents a warning.
+
 ## [0.6.0] - 2023-08-22
 ### Changed
 - Set the minimum Ruby version to `3.2`.
@@ -48,6 +52,7 @@ by updating it from `~ 10.0` to `~ 12.3`.
 - Initial core functionality
 - Codebase maintenance tools
 
+[0.6.1]: https://github.com/wilsonsilva/tuga/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/wilsonsilva/tuga/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/wilsonsilva/tuga/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/wilsonsilva/tuga/compare/v0.4.0...v0.5.0
